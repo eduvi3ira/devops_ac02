@@ -1,8 +1,11 @@
-class operacoes():
-    def soma(self, valores):
-        val =0
-        for v in valores:
-            val = val + val
-        return val
+from unittest import TestCase
+from com.kuma.operacoes import Operacoes
 
-#print(Operacoes().soma([1,3]))
+class TestOperacoes(TestCase):
+    # Operacoes().soma([1, 3])
+
+    def setUp(self):
+        self.operacoes = Operacoes()
+
+    def test_soma(self):
+        self.assertEqual(self.operacoes.soma([1, 3]), 5, 'Deveria ser 4')
